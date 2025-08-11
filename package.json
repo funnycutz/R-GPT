@@ -1,0 +1,12 @@
+{
+  "name": "r-gpt",
+  "version": "1.0.0",
+  "description": "Full-screen chat application with AI integration",
+  "scripts": {
+    "build": "cp -r src/* public/ && cp firebase-config.js public/",
+    "dev": "echo 'No dev server required'"
+  },
+  "dependencies": {
+    "firebase": "^9.0.0"
+  }
+}
