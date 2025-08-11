@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Screen Chat</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Auth Container -->
+  <div id="auth-container">
+    <div class="auth-box">
+      <h1>Welcome to Chat</h1>
+      <div class="auth-form">
+        <input type="email" id="sign-in-email" placeholder="Your email address">
+        <button id="send-link-button">Send Sign-In Link</button>
+        <div class="auth-divider">or</div>
+        <button id="google-sign-in-button" class="google-btn">
+          <i class="fab fa-google"></i> Sign in with Google
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Content -->
+  <div id="chat-content">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <div class="sidebar-header">
+        <h2>Your Chats</h2>
+        <button id="new-chat-button" class="icon-btn">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+      <div id="chat-list"></div>
+      <div class="sidebar-footer">
+        <button id="sign-out-button">Sign Out</button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <button id="menu-button" class="icon-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="chat-title">New Chat</div>
+        <div class="chat-controls">
+          <label class="toggle-switch">
+            <input type="checkbox" id="temp-toggle">
+            <span class="slider"></span>
+            <span class="labels" data-on="TEMP" data-off="SAVED"></span>
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+            <span class="labels" data-on="🌙" data-off="☀️"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Chat Container -->
+      <div id="chat-container"></div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <div class="input-buttons">
+          <label for="image-upload" class="icon-btn">
+            <i class="fas fa-image"></i>
+            <input type="file" id="image-upload" accept="image/*" style="display: none;">
+          </label>
+          <button id="send-button" class="icon-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase and App Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+  
+  <script type="module" src="src/firebase-config.js"></script>
+  <script type="module" src="src/auth.js"></script>
+  <script type="module" src="src/chat.js"></script>
+  <script type="module" src="src/ui.js"></script>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
